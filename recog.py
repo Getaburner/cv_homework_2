@@ -8,6 +8,7 @@ import plot
 
 THRESH_ANGLE = 10
 ENABLE_PREDICT = False
+DETECT_COLOR_RED = False
 
 cap = cv2.VideoCapture('sample.avi')
 
@@ -58,6 +59,10 @@ while True:
 		isBlue = 80 <= h <= 110
 		# 滤去色彩饱和度过低或不是红蓝两色的
 		if s < 80 or not (isRed or isBlue):
+			continue
+
+		# 仅匹配预设的颜色
+		if DETECT_COLOR_RED != isRed:
 			continue
 
 		# 检测方向
