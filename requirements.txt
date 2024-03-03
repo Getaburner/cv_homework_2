@@ -1,0 +1,5 @@
+numpy==1.26.1
+opencv-python==4.8.1.78
+matplotlib==3.8.2
+matplotlib-inline==0.1.6
+filterpy==1.4.5
